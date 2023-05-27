@@ -45,10 +45,8 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: Build podcast
-        # cd into ./_site/podcast
-        # run podcast_feed_gen
-        # cd -
-        run: cd ./_site/podcast; bundle exec podcast_feed_gen > feed.xml; cd -
+        working-directory: ./_site/podcast
+        run: bundle exec podcast_feed_gen > feed.xml
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
