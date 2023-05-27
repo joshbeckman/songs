@@ -46,7 +46,7 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build podcast
         working-directory: ./_site/podcast
-        run: bundle exec podcast_feed_gen > feed.xml
+        run: bundle exec generate.rb > feed.xml
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
