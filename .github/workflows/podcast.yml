@@ -45,7 +45,7 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: debug 1
-        run: ls ./vendor/bundle/ruby
+        run: ls ./vendor/bundle/ruby/3.0.0
       - name: Build podcast
         working-directory: ./_site/podcast
         run: bundle exec ruby ./generate.rb > feed.xml
