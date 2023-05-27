@@ -39,11 +39,15 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 1 # Increment this number if you need to re-download cached gems
+            # bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+            # cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+      - name: debug bundler
+        run: bundle
+      - name: debug gem
+        run: bundle info podcast_feed_gen
       - name: Build podcast
         working-directory: ./_site/podcast
         run: $(bundle info podcast_feed_gen --path)/exe/podcast_feed_gen > index.rss
