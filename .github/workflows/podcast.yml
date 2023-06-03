@@ -51,6 +51,8 @@ jobs:
       - name: Build podcast
         working-directory: ./_site/podcast
         run: $(bundle info podcast_feed_gen --path)/exe/podcast_feed_gen > index.rss
+      - name: Build HTML site
+        run: bundle exec generate_html.rb > _site/index.html
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v1
