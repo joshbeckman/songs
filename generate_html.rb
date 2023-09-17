@@ -32,6 +32,7 @@ end.join
 header = <<-html
 <head>
   <title>#{title}</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta property="og:description" content="#{description}"/>
   <meta property="og:image" content="#{image_url}">
   <link href="./style.css" rel="stylesheet" />
